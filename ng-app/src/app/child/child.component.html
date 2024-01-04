@@ -1,0 +1,6 @@
+<ul>
+  @for (item of parentList; track item) {
+  <li>{{item}}</li>
+  }
+</ul>
+<button (click)="onNotifyParent($event)">Notify Parent of Child Click Event</button>
