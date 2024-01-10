@@ -1,3 +1,4 @@
-<input #usrInput placeholder="Type Anything"/>
-<button (click)="onUsrInput(usrInput)">Press to acquire user input</button>
-<app-todo-list></app-todo-list>
+<div class="container">
+  <h1>Angular App</h1>
+  <app-todo-list [tasks]="tasks" (addTaskEvent)="addTask($event)" (deleteTaskEvent)="deleteTask($event)"></app-todo-list>
+</div>

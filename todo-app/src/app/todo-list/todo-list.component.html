@@ -1,5 +1,35 @@
-<ul>
-  @for (item of itemList; track item) {
-  <li>{{item}}</li>
-  }
-</ul>
+<div class="row">
+  <div>
+    <h2>TODO</h2>
+    <form>
+      <div class="form-group">
+        <label for="title">Enter Task</label>
+        <input type="text" class="form-control" id="title" name="taskTitle" [(ngModel)]="newTask.title">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" name="taskDescription" [(ngModel)]="newTask.description"></textarea>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="addTask()">Add Task</button>
+    </form>
+  </div>
+  <div>
+    <h2>Task Details</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks; let i = index;">
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+          <td><button type="button" class="btn btn-danger btn-sm" (click)="deleteTask(i)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
